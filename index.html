@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Play — Volleyball Sign-Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="eyebrow">CICS · DLSU-D · Open Play Sign-Up</div>
+    <h1>OPEN <span>PLAY</span></h1>
+    <p class="session-info" id="sessionInfo">Loading next session…</p>
+    <div class="scoreboard">
+      <div class="score-chip"><span id="filledCount">0</span><small>/12 ON COURT</small></div>
+      <div class="score-chip alt"><span id="waitCount">0</span><small>WAITLISTED</small></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="court-section" aria-label="Live court">
+      <div class="court" id="court">
+        <div class="team-panel team-a" id="teamA">
+          <div class="team-label">TEAM A</div>
+          <div class="slots" id="slotsA"><!-- 6 slots injected by script.js --></div>
+        </div>
+
+        <div class="net" aria-hidden="true">
+          <span class="ball" id="ball">🏐</span>
+        </div>
+
+        <div class="team-panel team-b" id="teamB">
+          <div class="team-label">TEAM B</div>
+          <div class="slots" id="slotsB"><!-- 6 slots injected by script.js --></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signup-section">
+      <div class="signup-card">
+        <h2>Join the Next Game</h2>
+        <p class="sub">Fill this out — you'll be auto-assigned a team and position on the court.</p>
+
+        <div class="form-msg" id="formMsg"></div>
+
+        <form id="signupForm">
+          <div class="field">
+            <label for="pName">Full Name</label>
+            <input type="text" id="pName" name="pName" placeholder="Juan Dela Cruz" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="pBlock">Block / Course</label>
+              <input type="text" id="pBlock" name="pBlock" placeholder="BSIT 3A" required>
+            </div>
+            <div class="field">
+              <label for="pContact">Contact / Messenger</label>
+              <input type="text" id="pContact" name="pContact" placeholder="09XX or FB name" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="pPosition">Preferred Position</label>
+            <select id="pPosition" name="pPosition">
+              <option value="Any">Any Position</option>
+              <option value="Setter">Setter</option>
+              <option value="Outside Hitter">Outside Hitter</option>
+              <option value="Middle Blocker">Middle Blocker</option>
+              <option value="Opposite">Opposite</option>
+              <option value="Libero">Libero</option>
+            </select>
+          </div>
+
+          <button type="submit" class="join-btn" id="joinBtn">🏐 Join Open Play</button>
+        </form>
+      </div>
+
+      <div class="roster-card">
+        <h2>Roster</h2>
+
+        <h3>Confirmed — On Court</h3>
+        <ul class="roster-list" id="rosterList">
+          <li class="empty">No players yet — be the first to join.</li>
+        </ul>
+
+        <h3>Waitlist</h3>
+        <ul class="waitlist-list" id="waitlistList">
+          <li class="empty">Waitlist is empty.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">getElementById · querySelector · querySelectorAll · getElementsByClassName · getElementsByTagName · getElementsByName · createElement · appendChild · removeChild</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
